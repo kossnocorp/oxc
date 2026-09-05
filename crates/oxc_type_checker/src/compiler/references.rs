@@ -24,7 +24,7 @@ use crate::tspath::is_external_module_name_relative;
 /// A file's external module references (tsgo `SourceFile.Imports` + `ModuleAugmentations` +
 /// `ReferencedFiles` + `TypeReferenceDirectives`).
 #[derive(Debug, Default)]
-pub(super) struct ExternalModuleReferences {
+pub struct ExternalModuleReferences {
     /// Module specifiers referenced by imports: static imports/re-exports in source order,
     /// followed by dynamic `import()`s and `import("...")` type queries in source order.
     pub imports: Vec<CompactStr>,
@@ -38,7 +38,7 @@ pub(super) struct ExternalModuleReferences {
 
 /// tsgo `collectExternalModuleReferences`: collect every module specifier the resolver should
 /// see for this file.
-pub(super) fn collect_external_module_references(
+pub fn collect_external_module_references(
     program: &AstProgram<'_>,
     module_record: &ModuleRecord<'_>,
     is_declaration_file: bool,

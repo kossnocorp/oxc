@@ -14,4 +14,5 @@ mod references;
 mod source_file;
 
 pub use program::{FileId, Program, ProgramOptions};
+pub use references::{ExternalModuleReferences, collect_external_module_references};
 pub use source_file::SourceFile;
